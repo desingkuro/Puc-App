@@ -1,0 +1,28 @@
+import { createStackNavigator } from '@react-navigation/stack';
+import {Home} from '../Screens/Home'
+import { Counts } from '../Screens/Counts';
+
+const Stack = createStackNavigator();
+
+export function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} 
+      options={{
+        tabBarIcon:({color,size})=>{
+            return <Ionicons name="home" size={size} color={color} />
+        },
+        tabBarLabelStyle:{
+            display:'none'
+        },
+        headerTitle:'Buscar',
+        headerTitleStyle:{
+          fontSize:26,
+          color:'#2499c7'
+        }
+    }}
+      />
+      <Stack.Screen name="Counts" component={Counts} />
+    </Stack.Navigator>
+  );
+}
