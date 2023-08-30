@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "Puc",
-    "slug": "Puc",
+    "slug": "puc-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/iconpuc.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/iconpuc.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,19 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splash.png",
+        "foregroundImage": "./assets/iconpuc.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.desingkuro.pucapp"
     },
     "web": {
       "favicon": "./assets/iconpuc.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "288a2866-87cb-417a-938e-b01e4eca3000"
+      }
+    },
+    "owner": "desingkuro"
   }
 }
