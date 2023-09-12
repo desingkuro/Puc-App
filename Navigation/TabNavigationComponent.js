@@ -1,6 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SettingsScreen } from '../Screens/Settings';
-import {Home} from '../Screens/Home'
 import {MyStack} from './StackNavigationComponent'
 
 import { Ionicons } from '@expo/vector-icons';
