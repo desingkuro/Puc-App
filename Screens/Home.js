@@ -9,6 +9,7 @@ import {Counts} from '../Api/Counts'
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
+import { DetalleCuentaModal } from "./DetalleCuentaModal"
 
 export function Home({navigation}){
     const {clases,listFilter} = useContext(contexto)
@@ -21,6 +22,9 @@ export function Home({navigation}){
 
     function openScreenDetalles(){
         navigation.navigate('Counts');
+    }
+    function openDetallesCounts(){
+        navigation.navigate('Detalles');
     }
 
     function renderListCounts(value) {
@@ -59,7 +63,7 @@ export function Home({navigation}){
                     keyExtractor={(item)=>(item.Cuenta)}
                     data={listFilter}
                     renderItem={({item})=>(
-                        <ListElement nombre={item.Descripción} Count={item.Cuenta}/>
+                        <ListElement nombre={item.Descripción} Count={item.Cuenta} icon={item.Descripción} navigation={openDetallesCounts}/>
                     )}
                     initialNumToRender={15}
                     windowSize={5}
@@ -77,7 +81,7 @@ export function Home({navigation}){
             </View>
             <View style={HomeStyle.ContainerListCount}>
                 {renderElements()}
-            </View>            
+            </View>     
         </View>
     )
 }

@@ -21,10 +21,8 @@ export function Counts(){
     }
     return(
         <View style={ModalStyle.containerModal}>
-                <View style={selectClas == 6 ?ModalStyle.containerMessageBig :ModalStyle.containerMessage}>
-                    <View style={ModalStyle.ConatainerInformation}>
-                        {viewSelect()}
-                    </View>
+                <View style={ModalStyle.ConatainerInformation}>
+                   {viewSelect()}
                 </View>
             </View>
     )

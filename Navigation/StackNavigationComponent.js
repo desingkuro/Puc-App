@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import {Home} from '../Screens/Home'
 import { Counts } from '../Screens/Counts';
+import { DetalleCuentaModal } from '../Screens/DetalleCuentaModal';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export function MyStack() {
     }}
       />
       <Stack.Screen name="Counts" component={Counts} />
+      <Stack.Screen name="Detalles" component={DetalleCuentaModal} />
     </Stack.Navigator>
   );
 }

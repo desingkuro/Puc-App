@@ -4,8 +4,7 @@ export const ModalStyle = StyleSheet.create({
     containerModal:{
         flex:1,
         alignItems:'center',
-        justifyContent:'center',
-        backgroundColor:'#B9B4C7',
+        backgroundColor:'#ffff',
     },
     containerMessage:{
         width:340,
@@ -30,13 +29,12 @@ export const ModalStyle = StyleSheet.create({
     },
     ConatainerInformation:{
         width:'100%',
-        top:40,
         height:350,
-        alignItems:'center',
+        left:20,
         justifyContent:'flex-start',
     },
     tittleModal:{
-        fontSize:25,
+        fontSize:35,
         fontWeight:'900',
         margin:10
     },

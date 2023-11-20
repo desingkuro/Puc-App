@@ -1,13 +1,32 @@
 import { useContext } from "react";
-import {TouchableOpacity,Text } from "react-native";
+import {TouchableOpacity,Text, View, Alert } from "react-native";
 import { contexto } from "../Context/Context";
 import { ListElementStyle } from "../Styles/ListElementStyle";
 
-export function ListElement({Count, icon, nombre}){
-    const {icons} = useContext(contexto)
+export function ListElement({Count, nombre, navigation}){
+    const {icons, obtenerDetalles, indiceCuenta} = useContext(contexto);
+
+    function obtenerClase(){
+        let icono = Count.split('');
+        return icono[0]
+    }
+
+    function openDetalles(){
+        const valor = obtenerDetalles(Count);
+        console.log(valor)
+        if(valor != undefined || valor != null){
+            if(valor >= 0){
+                navigation();
+            }else{
+                Alert.alert('esta cuenta no tiene detalle')
+            }
+        }
+    }
+
     return(
-        <TouchableOpacity style={ListElementStyle.container}> 
-           <Text style={ListElementStyle.text}>{icons[icon]}  {Count} {nombre}</Text>
+        <TouchableOpacity style={ListElementStyle.container} onPress={openDetalles}> 
+           <View style={ListElementStyle.textIcon}>{icons[obtenerClase()]}</View>
+           <Text style={ListElementStyle.text}>{ Count+' '+nombre}</Text>
         </TouchableOpacity>
     )
 }

@@ -14,6 +14,7 @@ export const SearchStyle = StyleSheet.create({
         borderRadius:10,
         padding:5,
         fontSize:18,
+        paddingLeft:10,
 
         shadowColor: "#000000",
         shadowOffset: {

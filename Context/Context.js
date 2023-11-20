@@ -5,6 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { detalles } from "../Api/detalleCuentas";
 
 export const contexto = createContext();
 export function ContextContainer(props){
@@ -48,12 +49,40 @@ export function ContextContainer(props){
         '5':<FontAwesome5 name="money-bill-wave" size={24} color="#9F0D7F" />,
         '6':<AntDesign name="copy1" size={28} color="#A084E8" />
     }
-    const [selectClas,setSelectClas] = useState(null)
-    const [modal,setModal] = useState(false)
-    const [listFilter,setListFilter] = useState(null)
+    const [selectClas,setSelectClas] = useState(null);
+    const [modal,setModal] = useState(false);
+    const [listFilter,setListFilter] = useState(null);
+    const [indiceCuenta, setIndiceCuenta] = useState(null);
+
+    function binarySearch(array, target) {
+        let left = 0;
+        let right = array.length - 1;
+      
+        while (left <= right) {
+          const mid = Math.floor((left + right) / 2);
+      
+          if (array[mid].codigo === target) {
+            return mid; // Se encontró el elemento, devuelve el índice
+          } else if (parseInt(array[mid].codigo) < parseInt(target)) {
+            left = mid + 1;
+          } else {
+            right = mid - 1;
+          }
+        }
+      
+        return -1; // No se encontró el elemento
+      }
+
+    function obtenerDetalles(value){
+        const valor = binarySearch(detalles,value);
+        return valor
+    }
 
     return(
-        <contexto.Provider value={{clases,icons,selectClas,setSelectClas,modal,setModal,listFilter,setListFilter}}>
+        <contexto.Provider value={{clases,icons,selectClas,setSelectClas,
+                                    modal,setModal,listFilter,setListFilter,
+                                    obtenerDetalles,indiceCuenta, setIndiceCuenta
+                                }}>
             {props.children}
         </contexto.Provider>
     )
