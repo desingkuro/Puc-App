@@ -4,7 +4,7 @@ import { contexto } from "../Context/Context";
 import { ListElementStyle } from "../Styles/ListElementStyle";
 
 export function ListElement({Count, nombre, navigation}){
-    const {icons, obtenerDetalles, indiceCuenta} = useContext(contexto);
+    const {icons, obtenerDetalles, indiceCuenta, setIndiceCuenta} = useContext(contexto);
 
     function obtenerClase(){
         let icono = Count.split('');
@@ -16,6 +16,7 @@ export function ListElement({Count, nombre, navigation}){
         console.log(valor)
         if(valor != undefined || valor != null){
             if(valor >= 0){
+                setIndiceCuenta(valor);
                 navigation();
             }else{
                 Alert.alert('esta cuenta no tiene detalle')

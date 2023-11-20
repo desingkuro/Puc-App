@@ -1,13 +1,73 @@
 import { StyleSheet } from "react-native";
 
 export const StyleDetalleCuenta = StyleSheet.create({
-    Modal:{
+    modal:{
         backgroundColor:'white',
         flex:1,
         alignItems:'center',
-        justifyContent:'center'
     },
-    container:{
-
+    containerCodigo:{
+        height:40,
+        paddingLeft:20,
+        justifyContent:'center',
+        width:'100%'
+    },
+    textTittle:{
+        fontSize:30,
+        fontWeight:'800'
+    },
+    containerDescripcion:{
+        width:'100%',
+        padding:20,
+        paddingBottom:5,
+        justifyContent:'center',
+        height:150,
+        marginBottom:15
+    },
+    textDescripcion:{
+        fontSize:18
+    },
+    tittleDescripcion:{
+        fontSize:22,
+        fontWeight:'800'
+    },
+    containerDC:{
+        height:500,
+        width:'100%',
+        flexDirection:'column',
+        marginTop:10
+    },
+    debito:{
+        width:'100%',
+        alignItems:'center',
+    },
+    credito:{
+        width:'100%',
+        alignItems:'center',
+    },
+    textDC:{
+        fontSize:16,
+        fontWeight:'400',
+        padding:20
+    },
+    tittleCredito:{
+        height:60,
+        fontSize:25,
+        backgroundColor:'#89CFF3',
+        width:'100%',
+        textAlignVertical:'center',
+        textAlign:'center',
+        fontWeight:'800',
+        color:'white'
+    },
+    tittleDebito:{
+        height:60,
+        fontSize:25,
+        backgroundColor:'#872341',
+        width:'100%',
+        textAlignVertical:'center',
+        textAlign:'center',
+        fontWeight:'800',
+        color:'white' 
     }
 })
