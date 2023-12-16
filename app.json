@@ -2,9 +2,9 @@
   "expo": {
     "name": "Puc",
     "slug": "puc-app",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
-    "icon": "./assets/iconpuc.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",

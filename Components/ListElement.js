@@ -13,13 +13,10 @@ export function ListElement({Count, nombre, navigation}){
 
     function openDetalles(){
         const valor = obtenerDetalles(Count);
-        console.log(valor)
         if(valor != undefined || valor != null){
             if(valor >= 0){
                 setIndiceCuenta(valor);
                 navigation();
-            }else{
-                Alert.alert('esta cuenta no tiene detalle')
             }
         }
     }
