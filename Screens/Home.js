@@ -1,4 +1,5 @@
 import { FlatList, ScrollView, Text, View } from "react-native"
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import { HomeStyle } from "../Styles/HomeStyles"
 import { Header } from "../Components/Header"
 import { CardClass } from "../Components/CardClass"
@@ -10,6 +11,8 @@ import {Counts} from '../Api/Counts'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { DetalleCuentaModal } from "./DetalleCuentaModal"
+
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3411089144478254/2843855415';
 
 export function Home({navigation}){
     const {clases,listFilter} = useContext(contexto)
@@ -73,6 +76,10 @@ export function Home({navigation}){
     }
     return(
         <View style={HomeStyle.containerView}>
+            <BannerAd
+            unitId={adUnitId}
+            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+            />
             <Header funcion={renderListCounts}/>
             <View style={HomeStyle.scrollContainer}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -82,6 +89,7 @@ export function Home({navigation}){
             <View style={HomeStyle.ContainerListCount}>
                 {renderElements()}
             </View>     
+
         </View>
     )
 }
