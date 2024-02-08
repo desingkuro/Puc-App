@@ -31,7 +31,7 @@ export function MyTabs() {
         }}
       />
 
-      <Tab.Screen 
+      {/*<Tab.Screen 
         name="Settings" 
         component={SettingsScreen} 
         options={{
@@ -41,7 +41,7 @@ export function MyTabs() {
             tabBarLabelStyle:{
                 display:'none'
             }
-        }}/>
+        }}/>*/}
     </Tab.Navigator>
   );
 }

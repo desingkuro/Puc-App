@@ -9,10 +9,13 @@ export const HomeStyle=StyleSheet.create({
         gap:10
     },
     scrollContainer:{
-        height:80,
+        height:100,
         width:'100%',    
         paddingLeft:10,
-
+        minWidth:380
+    },scroll:{
+        flex:1,
+        paddingTop:12
     },
     ContainerListCount:{
         height:'100%',

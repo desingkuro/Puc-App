@@ -1,5 +1,4 @@
 import { FlatList, ScrollView, Text, View } from "react-native"
-import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import { HomeStyle } from "../Styles/HomeStyles"
 import { Header } from "../Components/Header"
 import { CardClass } from "../Components/CardClass"
@@ -10,9 +9,11 @@ import {Counts} from '../Api/Counts'
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
-import { DetalleCuentaModal } from "./DetalleCuentaModal"
 
-const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3411089144478254/2843855415';
+
+//import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+//import { DetalleCuentaModal } from "./DetalleCuentaModal"
+//const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3411089144478254/2843855415';
 
 export function Home({navigation}){
     const {clases,listFilter} = useContext(contexto)
@@ -31,7 +32,9 @@ export function Home({navigation}){
     }
 
     function renderListCounts(value) {
-        const lowerCaseValue = value.toLowerCase(); // Convertir el valor a minúsculas para una comparación sin distinción de mayúsculas
+        
+        // Convertir el valor a minúsculas para una comparación sin distinción de mayúsculas
+        const lowerCaseValue = value.toLowerCase(); 
     
         if(value!=='' || value!==' '){
             return Counts.reduce((filteredCounts, cuenta) => {
@@ -76,20 +79,19 @@ export function Home({navigation}){
     }
     return(
         <View style={HomeStyle.containerView}>
-            <BannerAd
+            {/*<BannerAd
             unitId={adUnitId}
             size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-            />
+            />*/}
             <Header funcion={renderListCounts}/>
             <View style={HomeStyle.scrollContainer}>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={HomeStyle.scroll} horizontal={true} showsHorizontalScrollIndicator={false}>
                     {renderClass()}
                 </ScrollView>
             </View>
             <View style={HomeStyle.ContainerListCount}>
                 {renderElements()}
             </View>     
-
         </View>
     )
 }
