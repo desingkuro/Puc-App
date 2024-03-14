@@ -16,7 +16,9 @@ import { Fontisto } from '@expo/vector-icons';
 //const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-3411089144478254/2843855415';
 
 export function Home({navigation}){
-    const {clases,listFilter} = useContext(contexto)
+    const {clases,listFilter} = useContext(contexto);
+
+    //renderiza las cuentas basicas del 1 al 6 
     function renderClass(){
         return clases.map((e,index)=>{
             const clase = e.codigo+' '+e.nombre;
@@ -27,15 +29,15 @@ export function Home({navigation}){
     function openScreenDetalles(){
         navigation.navigate('Counts');
     }
+    
     function openDetallesCounts(){
         navigation.navigate('Detalles');
     }
 
     function renderListCounts(value) {
-        
         // Convertir el valor a minúsculas para una comparación sin distinción de mayúsculas
         const lowerCaseValue = value.toLowerCase(); 
-    
+        //
         if(value!=='' || value!==' '){
             return Counts.reduce((filteredCounts, cuenta) => {
                 const descripcionMatch = cuenta.Descripción.toLowerCase().includes(lowerCaseValue);
@@ -50,6 +52,7 @@ export function Home({navigation}){
         }
     }
     
+    //renderiza la lista de cuentas buscadas si la lista no esta vacia o si estas fueron halladas
     function renderElements(){
         if(!listFilter){
             return <View style={{alignItems:'center'}}>

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Puc",
     "slug": "puc-app",
-    "version": "2.0.0",
+    "version": "2.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -29,7 +29,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "681ad10d-584e-45f5-8df9-1c36c98a277a"
+        "projectId": ""
       }
     },
     "plugins": [

@@ -9,6 +9,7 @@ import { detalles } from "../Api/detalleCuentas";
 
 export const contexto = createContext();
 export function ContextContainer(props){
+    
     const clases = [
         {
             'codigo':'1',
@@ -49,6 +50,7 @@ export function ContextContainer(props){
         '5':<FontAwesome5 name="money-bill-wave" size={24} color="#9F0D7F" />,
         '6':<AntDesign name="copy1" size={28} color="#A084E8" />
     }
+    
     const [selectClas,setSelectClas] = useState(null);
     const [modal,setModal] = useState(false);
     const [listFilter,setListFilter] = useState(null);

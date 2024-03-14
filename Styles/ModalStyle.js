@@ -29,9 +29,9 @@ export const ModalStyle = StyleSheet.create({
     },
     ConatainerInformation:{
         width:'100%',
-        height:350,
         left:20,
         justifyContent:'flex-start',
+        paddingBottom:20
     },
     tittleModal:{
         fontSize:35,
@@ -41,6 +41,18 @@ export const ModalStyle = StyleSheet.create({
     descriptionModal:{
         fontSize:19,
         width:'87%'
+    },
+    scrollContainer:{
+        height:'100%',
+        width:'100%',    
+        paddingLeft:10,
+        minWidth:380,
+    },
+    containerScrollclasesAsociadas:{
+        height:'100%',
+        width:'100%',
+        alignItems:'center',
+        justifyContent:'center',
     }
 
 })

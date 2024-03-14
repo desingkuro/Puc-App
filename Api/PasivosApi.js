@@ -48,7 +48,7 @@ export const Pasivos = [
     {"Cuenta":"219530","Descripción":"Directores","Naturaleza":"Haber"},
     {"Cuenta":"219595","Descripción":"Otras","Naturaleza":"Haber"},
     {"Cuenta":"22","Descripción":"Proveedores","Naturaleza":"Haber"},
-    {"Cuenta":"2205","Descripción":"Nacionales","Naturaleza":"Haber"},
+    {"Cuenta":"2205","Descripción":"Proveedores Nacionales","Naturaleza":"Haber"},
     {"Cuenta":"2210","Descripción":"Del exterior","Naturaleza":"Haber"},
     {"Cuenta":"2215","Descripción":"Cuentas corrientes comerciales","Naturaleza":"Haber"},
     {"Cuenta":"2220","Descripción":"Casa matriz","Naturaleza":"Haber"},

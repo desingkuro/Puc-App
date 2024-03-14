@@ -23,6 +23,6 @@ export const HomeStyle=StyleSheet.create({
 
         alignItems:'center',
         justifyContent:'center',
-        paddingBottom:50
+        paddingBottom:100
     }
 })
