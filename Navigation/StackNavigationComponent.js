@@ -1,13 +1,15 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import {Home} from '../Screens/Home'
-import { Counts } from '../Screens/Counts';
-import { DetalleCuentaModal } from '../Screens/DetalleCuentaModal';
+import  Counts  from '../Screens/Counts';
+import DetalleCuentaModal from '../Screens/DetalleCuentaModal';
 
 const Stack = createStackNavigator();
 
 export function MyStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+    }}>
       <Stack.Screen name="Home" component={Home} 
       options={{
         tabBarIcon:({color,size})=>{

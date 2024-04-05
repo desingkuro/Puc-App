@@ -3,8 +3,9 @@ import { StyleDetalleCuenta } from "../Styles/DetalleCuentaStyle";
 import {useContext} from 'react'
 import { detalles } from "../Api/detalleCuentas";
 import { contexto } from "../Context/Context";
+import { memo } from "react";
 
-export function DetalleCuentaModal() {
+function DetalleCuentaModal() {
 
     const {indiceCuenta} = useContext(contexto);
     const cuentaActual = detalles[indiceCuenta];
@@ -31,4 +32,5 @@ export function DetalleCuentaModal() {
         </View>
     );
 }
+export default memo(DetalleCuentaModal);
 

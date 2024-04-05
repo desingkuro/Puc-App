@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from "react-native"
 import { ModalStyle } from "../Styles/ModalStyle"
-import { useContext, useEffect, useState} from "react"
+import { memo, useContext, useEffect, useState} from "react"
 import { contexto } from "../Context/Context"
 import { Pasivos } from "../Api/PasivosApi"
 import { Activos } from "../Api/ActivosApi"
@@ -10,7 +10,7 @@ import {Ingresos} from "../Api/IngresosApi"
 import {Costos} from "../Api/CostosApi"
 import {ListElement} from '../Components/ListElement'
 
-export function Counts({navigation}){
+function Counts({navigation}){
     const {selectClas,clases,icons} = useContext(contexto);
     const [elementos,setElementos] = useState([]);
 
@@ -79,10 +79,12 @@ export function Counts({navigation}){
                         renderItem={({item})=>(
                             <ListElement nombre={item.Descripción} Count={item.Cuenta} navigation={openDetallesCounts}/>
                         )}
-                        initialNumToRender={8}
+                        initialNumToRender={5}
                         windowSize={5}
                     />
                 </View>
             </View>
     )
 }
+
+export default memo(Counts);

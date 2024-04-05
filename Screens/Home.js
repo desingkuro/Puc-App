@@ -74,7 +74,7 @@ export function Home({navigation}){
                     renderItem={({item})=>(
                         <ListElement nombre={item.Descripción} Count={item.Cuenta} icon={item.Descripción} navigation={openDetallesCounts}/>
                     )}
-                    initialNumToRender={15}
+                    initialNumToRender={10}
                     windowSize={5}
                 />
             )
