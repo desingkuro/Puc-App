@@ -45,7 +45,7 @@ export function ContextContainer(props){
     const icons = {
         '1':<FontAwesome5 name="coins" size={24} color="#F0B86E" />,
         '2':<FontAwesome name="credit-card-alt" size={24} color="#33BBC5" />,
-        '3':<Ionicons name="md-person-circle-sharp" size={30} color="#445069" />,
+        '3':<Ionicons name="person-circle-sharp" size={30} color="#445069" />,
         '4':<Foundation name="graph-bar" size={30} color="#4477CE" />,
         '5':<FontAwesome5 name="money-bill-wave" size={24} color="#9F0D7F" />,
         '6':<AntDesign name="copy1" size={28} color="#A084E8" />
